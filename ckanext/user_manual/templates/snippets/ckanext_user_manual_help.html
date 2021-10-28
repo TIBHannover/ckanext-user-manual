@@ -1,0 +1,43 @@
+{% asset 'ckanext-sfb-layout-help/help-css' %}
+{% asset 'ckanext-sfb-layout-help/help-js' %}
+
+<div clas="row">
+    <div class="col-sm-12">
+        <h1>{{_('Help')}}</h4>
+    </div>
+</div>
+<div class="row" id="item1">
+    <div class="col-sm-12">
+        <div class="menu-item" id="content1-head">
+            <i class="fa fa-plus" aria-hidden="true"></i> 
+            {{_('How to Add a new dataset')}}?
+        </div>
+        <div class="menu-item-body" id="content1-body"> 
+            {% snippet 'snippets/sections/section1.html' %}
+        </div>       
+    </div>
+</div>
+
+<div class="row" id="item2">
+    <div class="col-sm-12">
+        <div class="menu-item" id="content2-head">
+            <i class="fa fa-plus" aria-hidden="true"></i> 
+            {{_('How to upload resource(s)')}}?
+        </div>
+        <div class="menu-item-body" id="content2-body"> 
+            {% snippet 'snippets/sections/section2.html' %}
+        </div>       
+    </div>
+</div>
+
+<div class="row" id="item3">
+    <div class="col-sm-12">
+        <div class="menu-item" id="content3-head">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+            {{_('How to edit a data resource?')}}?
+        </div>
+        <div class="menu-item-body" id="content3-body"> 
+            {% snippet 'snippets/sections/section3.html' %}
+        </div>       
+    </div>
+</div>

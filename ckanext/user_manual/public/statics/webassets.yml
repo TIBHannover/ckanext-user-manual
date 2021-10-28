@@ -1,0 +1,17 @@
+help-css:
+  output: ckanext-user-manual/%(version)s_my.css
+  contents:
+    - user_manual.css
+
+help-js:  
+  output: ckanext-user-manual/%(version)s_my.js
+  extra:
+    preload:
+      - base/main
+      - vendor/vendor
+      - vendor/bootstrap
+      - vendor/jquery
+      - vendor/jquery.ui.core
+  contents:
+    - user_manual.js
+    
