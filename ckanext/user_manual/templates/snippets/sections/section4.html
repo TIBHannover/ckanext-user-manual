@@ -1,0 +1,19 @@
+<p>
+    {{_('A dataset can have three visibility mode')}}:
+</p>
+<ul>
+    <li>
+        <b>Public</b>: {{_('Anybody can see your dataset')}}
+    </li>
+    <li>
+        <b>Private</b>: {{_('People inside your organization can see your dataset.')}}
+    </li>
+    <li>
+        <b>Private with collaborator(s)</b>: 
+        {% trans %} 
+            The dataset is private but a number of collaborators 
+            from outside the owner organization can access the dataset.
+        {% endtrans %}
+        
+    </li>
+</ul>
