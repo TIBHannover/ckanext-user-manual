@@ -6,10 +6,17 @@ from flask import Blueprint, render_template
 def help():
     return render_template('help.html')
 
+def check_plugin_enabled(plugin_name):
+    plugins = toolkit.config.get("ckan.plugins")
+    if plugin_name in plugins:
+        return True
+    return False
+
 
 class UserManualPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.IBlueprint)
+    plugins.implements(plugins.ITemplateHelpers)
 
 
     # IConfigurer
@@ -32,3 +39,8 @@ class UserManualPlugin(plugins.SingletonPlugin):
             )   
 
         return blueprint 
+    
+    #ITemplateHelpers
+
+    def get_helpers(self):
+        return {'is_plugin_enabled': check_plugin_enabled}
