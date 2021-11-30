@@ -1,22 +1,11 @@
 {% ckan_extends %}
 
 {% block header_site_navigation_tabs %}
-	{% if h.is_plugin_enabled('data_comparision') %}
-		{{ h.build_nav_main(
-		    ('dataset.search', _('Datasets')),
-		    ('organization.index', _('Organizations')),
-		    ('group.index', _('Groups')),
-		    ('home.about', _('About')),
-			('user_manual.help', _('Help')),
-			('data_comparision.base_view', _('Data Comparision'))
-			 ) }}
-	{% else: %}
-		{{ h.build_nav_main(
+	{{ h.build_nav_main(
 		    ('dataset.search', _('Datasets')),
 		    ('organization.index', _('Organizations')),
 		    ('group.index', _('Groups')),
 		    ('home.about', _('About')),
 			('user_manual.help', _('Help'))
 			 ) }}
-	{% endif %}
 {% endblock %}
