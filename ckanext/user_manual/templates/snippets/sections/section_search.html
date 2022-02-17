@@ -1,80 +1,83 @@
 <p>
-    {% trans %}
-        Ckan supports two types of search:
-
-    {% endtrans %}
+    {{_('Ckan unterstützt zwei Suchmodi:')}}
 </p>
 <ul>
-    <li>Simple Search</li>
-    <li>advanced search</li>
+    <li>{{_('Einfache Suche')}}</li>
+    <li>{{_('Erweiterte Suche')}}</li>
 </ul>
 
-<h4> {%trans%} Simple Search Rules {%endtrans%}:</h4>
+<h4> {%trans%} Regel einfache Suche: {%endtrans%}:</h4>
 <ul>
     <li>
-        {%trans%} <b>The search words are optional by default</b> <br> Ex: Oxygen → all datasets that have the word "oxygen"  {%endtrans%}
+        {%trans%} <b>Die Suchbegriffe sind standardmäßig optional</b> <br> 
+            Beispiel: Sauerstoff → alle Datensätze, die das Wort "Sauerstoff" enthalten  
+        {%endtrans%}
     </li>
 
      <li>
-        {%trans%} <b>Mandatory word → +</b> <br>   
-            Ex: oxygen +free → datasets that contain "oxygen" and must have the word "free"  
+        {%trans%} <b>Obligatorisches Wort → +</b> <br>   
+            Bsp: oxygen +free → Datensätze, die "oxygen" enthalten und das Wort "free" enthalten müssen
         {%endtrans%}
     </li>
     <li>
-        {%trans%} <b>Prohibited word → -</b> <br>   
-            Ex: oxygen -free → datasets that contain "oxygen" and excluded the ones with the word "free"
+        {%trans%} <b>Verbotenes Wort → -</b> <br>   
+            Bsp: oxygen -free → Datensätze, die "oxygen" enthalten und diejenigen mit dem Wort "free" ausschließen
         {%endtrans%}
     </li>
 
     <li>
         {%trans%} <b>Phrase → " "</b> <br>   
-            Ex: "oxygen free" → datasets that contain "oxygen free" as a phrase
+            Bsp: "sauerstofffrei" → Datensätze, die "sauerstofffrei" als Phrase enthalten
         {%endtrans%}
     </li>
 
     <li>
-        {%trans%} <b>Stemming. Ckan search engine (solr) uses stemming on a search query </b> <br>   
-            Ex: search for "produce" also searches for "producing" and "production"
+        {%trans%} <b>Stemming. Die Ckan-Suchmaschine (Solr) verwendet Stemming für eine Suchanfrage </b> <br>   
+            Beispiel: Suche nach "produce" sucht auch nach "producing" und "production"
         {%endtrans%}
     </li>
 
     <li>
-        {%trans%} <b>Does NOT support wild card search</b> <br>   
+        {%trans%} 
+            <b>ckan unterstützt KEINE Wildcard-Suche</b> <br>   
         {%endtrans%}
     </li>
 
 </ul>
 
 <br>
-<h4> {%trans%} Advanced Search Rules {%endtrans%}:</h4>
+<h4> {%trans%} Regeln erweiterte Suche: {%endtrans%}:</h4>
 <ul>
    
      <li>
-        {%trans%} <b>The advanced search get enabled if the user utilize colon in the search query</b> <br>   
-            title:chemistry → all datasets that have the word "chemistry" in their title 
+        {%trans%} 
+            <b>Die erweiterte Suche wird aktiviert, wenn der Benutzer einen Doppelpunkt in der Suchanfrage verwendet</b> 
+            <br>   
+            title:Chemie → alle Datensätze, die das Wort "Chemie" im Titel haben
         {%endtrans%}
     </li>
     <li>
-        {%trans%} <b>Wild card search → *</b> <br>   
-            title:chem* → all datasets that have the words which start with "chem" such as "Chemistry" or "Chemical"
+        {%trans%} <b>Platzhaltersuche → *</b> <br>   
+            title:chem* → alle Datensätze, die Wörter enthalten, die mit "chem" beginnen, z. B. "Chemistry" oder "Chemical"
         {%endtrans%}
     </li>
 
     <li>
         {%trans%} <b>OR → ||</b> <br>   
-            title:chemistry || title:bio → all datasets that have the word "chemistry"  OR "bio" in their title
+            title:chemistry || title:bio → alle Datensätze, die das Wort "chemistry" ODER "bio" im Titel haben
         {%endtrans%}
     </li>
 
     <li>
-        {%trans%} <b>Proximity → ~</b> <br>   
-            title:"chemistry bio" ~ 4 → all datasets that have the word "chemistry"  and "bio" in their title with 4 words in between (chemistry XX AA BB KK bio)
+        {%trans%} <b>Annäherung → ~</b> <br>   
+            title: "chemistry bio" ~ 4 → alle Datensätze, die das Wort "chemistry" und "bio" in ihrem Titel mit 4 
+            Wörtern dazwischen enthalten (chemistry XX AA BB KK bio)
         {%endtrans%}
     </li>
 
     <li>
-        {%trans%} <b>Fuzzy searches based on the Levenshtein Distance:</b> <br>   
-            author: powell~ → searches for words in close distance to the search term such as “jowell” or “pomell”
+        {%trans%} <b>Unscharfe Suche auf der Grundlage der Levenshtein-Distanz:</b> <br>   
+            author: powell~ → sucht nach Wörtern, die einen geringen Abstand zum Suchbegriff haben, wie "jowell" oder "pomell"
         {%endtrans%}
     </li>
 
