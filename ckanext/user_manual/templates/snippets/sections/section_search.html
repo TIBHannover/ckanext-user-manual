@@ -1,0 +1,84 @@
+<p>
+    {{_('Ckan unterstützt zwei Suchmodi:')}}
+</p>
+<ul>
+    <li>{{_('Einfache Suche')}}</li>
+    <li>{{_('Erweiterte Suche')}}</li>
+</ul>
+
+<h4> {%trans%} Regel einfache Suche: {%endtrans%}:</h4>
+<ul>
+    <li>
+        {%trans%} <b>Die Suchbegriffe sind standardmäßig optional</b> <br> 
+            Beispiel: Sauerstoff → alle Datensätze, die das Wort "Sauerstoff" enthalten  
+        {%endtrans%}
+    </li>
+
+     <li>
+        {%trans%} <b>Obligatorisches Wort → +</b> <br>   
+            Bsp: oxygen +free → Datensätze, die "oxygen" enthalten und das Wort "free" enthalten müssen
+        {%endtrans%}
+    </li>
+    <li>
+        {%trans%} <b>Verbotenes Wort → -</b> <br>   
+            Bsp: oxygen -free → Datensätze, die "oxygen" enthalten und diejenigen mit dem Wort "free" ausschließen
+        {%endtrans%}
+    </li>
+
+    <li>
+        {%trans%} <b>Phrase → " "</b> <br>   
+            Bsp: "sauerstofffrei" → Datensätze, die "sauerstofffrei" als Phrase enthalten
+        {%endtrans%}
+    </li>
+
+    <li>
+        {%trans%} <b>Stemming. Die Ckan-Suchmaschine (Solr) verwendet Stemming für eine Suchanfrage </b> <br>   
+            Beispiel: Suche nach "produce" sucht auch nach "producing" und "production"
+        {%endtrans%}
+    </li>
+
+    <li>
+        {%trans%} 
+            <b>ckan unterstützt KEINE Wildcard-Suche</b> <br>   
+        {%endtrans%}
+    </li>
+
+</ul>
+
+<br>
+<h4> {%trans%} Regeln erweiterte Suche: {%endtrans%}:</h4>
+<ul>
+   
+     <li>
+        {%trans%} 
+            <b>Die erweiterte Suche wird aktiviert, wenn der Benutzer einen Doppelpunkt in der Suchanfrage verwendet</b> 
+            <br>   
+            title:Chemie → alle Datensätze, die das Wort "Chemie" im Titel haben
+        {%endtrans%}
+    </li>
+    <li>
+        {%trans%} <b>Platzhaltersuche → *</b> <br>   
+            title:chem* → alle Datensätze, die Wörter enthalten, die mit "chem" beginnen, z. B. "Chemistry" oder "Chemical"
+        {%endtrans%}
+    </li>
+
+    <li>
+        {%trans%} <b>OR → ||</b> <br>   
+            title:chemistry || title:bio → alle Datensätze, die das Wort "chemistry" ODER "bio" im Titel haben
+        {%endtrans%}
+    </li>
+
+    <li>
+        {%trans%} <b>Annäherung → ~</b> <br>   
+            title: "chemistry bio" ~ 4 → alle Datensätze, die das Wort "chemistry" und "bio" in ihrem Titel mit 4 
+            Wörtern dazwischen enthalten (chemistry XX AA BB KK bio)
+        {%endtrans%}
+    </li>
+
+    <li>
+        {%trans%} <b>Unscharfe Suche auf der Grundlage der Levenshtein-Distanz:</b> <br>   
+            author: powell~ → sucht nach Wörtern, die einen geringen Abstand zum Suchbegriff haben, wie "jowell" oder "pomell"
+        {%endtrans%}
+    </li>
+
+</ul>

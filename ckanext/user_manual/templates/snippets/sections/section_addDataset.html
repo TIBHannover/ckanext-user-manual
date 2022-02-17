@@ -1,0 +1,131 @@
+<p>
+    {{_('Ein Dataset ist der Haupteintrag in ckan. 
+        Zu einem Dataset können untergeordnet beliebig viele Data Resources, d.h. Dateien hinzugefügt werden.')}}
+</p>
+<p>
+    {{_('Die CKAN Seite "Create Dataset" kann auf zwei Wegen aufgerufen werden:')}}
+</p>
+<ul>
+    <li>
+        <p>
+            {{_('von jeder Seite aus kann über den Link "Datasets" in der Menüleiste die Datasets Übersichtsseite aufgerufen werden.
+             Auf dieser Seite kann dann über die Schaltfläche "Add Dataset" oberhalb der Suchleiste ein neues Dataset hinzugefügt werden.')}}
+        </p>        
+    </li>
+    <li>
+        <p>
+            {{_('Alternativ findet sich die Schaltfläche "Add Dataset" auch auf der Übersichtsseite einer Organization,
+             ebenfalls oberhalb der Suchleiste')}}
+        </p>        
+    </li>
+</ul> 
+<br>
+<p>
+    {{_('Beim Hinzufügen des Dataset fragt CKAN nachfolgende Metadaten zur Beschreibung des Datasets ab. ')}}
+</p>
+<div class="alert alert-warning">
+    <p>
+        <strong>{{_('Hinweis')}}:</strong>  {{_('Planen Sie mehrere zusammengehörige Dateien als Dataset hochzuladen,
+         so sollten Sie dies in der Description beschreiben. z.B. "Dieser Datensatz beschreibt das Experiment XY.
+          Dabei wurden Messdaten zu AB, CD, ED erhoben, die in den Dateien DATEINAME2, DATEINAME3, zu finden sind."')}}
+    </p>
+</div>
+<ul>
+    <li>
+        <p>
+            <strong>Title:</strong>  {{_('Der Titel ist in CKAN eindeutig und wird nur einmal vergeben,
+             daher sollte er kurz, aber spezifisch sein. Z.B.
+              "Messung der Oxidschichtdicke auf Aluminiumbauteil XY" ist besser als "Oxidschichtdicke ".')}}
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Description:</strong> {{_('Hier können Sie eine längere Beschreibung des Datensatzes hinzufügen,
+             einschließlich Informationen wie z. B. woher die Daten stammen und alle Informationen,
+              die für die Verwendung der Daten erforderlich sind.
+               Versuchen Sie sich beim Verfassen der Beschreibung in die Lage eines späteren Datennachnutzers zu versetzen.
+                Welche Informationen bräuchten Sie, um diese Daten leicht zu verstehen und nachzuvollziehen.')}}
+        </p>
+        <div class="alert alert-warning">
+            <p>
+                <strong>{{_('Hinweis')}}:</strong>  {{_('Planen Sie mehrere zusammengehörige Dateien als Dataset hochzuladen, 
+                so sollten Sie dies in der Description beschreiben. z.B. "Dieser Datensatz beschreibt das Experiment XY. 
+                Dabei wurden Messdaten zu AB, CD, ED erhoben, die in den Dateien DATEINAME2, DATEINAME3, zu finden sind."')}}
+            </p>
+        </div>
+    </li>
+    <li>
+        <p>
+            <strong>Tags:</strong> {{_('Hier können Sie Tags (Schlagwörter) hinzufügen, 
+            die das Auffinden der Daten erleichtern und sie mit anderen verwandten Daten verknüpfen. 
+            Beispiele könnten sein: "Aluminium", "Kupfer", "Silan". Drücken Sie die Taste zwischen den Tags. 
+            Wenn Sie ein Schlagwort falsch eingegeben haben, können Sie es mit der Schaltfläche "Löschen" entfernen, 
+            bevor Sie den Datensatz speichern.')}}
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>License:</strong> {{_(' ist es wichtig, Lizenzinformationen anzugeben, damit spätere Nutzer wissen, 
+            wie sie die Daten verwenden können. Wir empfehlen die Verwendung der Creative Commons Attribution License (cc-by).')}}
+            <a href="http://opendefinition.org/licenses/cc-by/" target="_blank">http://opendefinition.org/licenses/cc-by/</a>
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Visibility:</strong> {{_('Öffentlich (jedes SFB Mitglied kann den Datensatz sehen) ODER 
+            Privat (nur die Mitglieder der Organization, d.h. ckan-Nutzer, die ihrem Institut zugeordnet sind)')}}
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Source:</strong> {{_('URL des Datensatzes (wenn dieser nicht in ckan hochgeladen wird, 
+            sondern woanders abgelegt wurde) ')}} ({{_('Beispiel')}}: http://www.example.com/dataset.json)
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Version:</strong> {{_('Version des Datasets. Wenn Sie nachträglich die Metadaten ändern odereine weitere 
+            Datei als data resource hinzufügen / entfernen, können Sie eine neue Version vergeben')}}
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Author Name and Email:</strong> {{_('Sie haben die Möglichkeit zwischen dem Datenerzeuger und Daten-Kurator 
+            (Person die Daten hochgeladen hat) zu differenzieren')}}
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Maintainer Name and Email:</strong> {{_('Sie haben die Möglichkeit zwischen dem Datenerzeuger und Daten-Kurator 
+            (Person die Daten hochgeladen hat) zu differenzieren')}}
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Custom field(s):</strong> {{_('Möglichkeit individuelle Metadaten als Key, Value einzutragen')}}
+        </p>
+    </li>
+</ul>
+<div class="alert alert-warning">
+    <p>
+        <strong>{{_('Hinweis')}}:</strong>  {{_('Das einzige Pflichtfeld ist der Titel des Datensatzes. Es ist jedoch eine gute Praxis, 
+        Beschreibung, Lizenz und Tags anzugeben. ')}}
+    </p>
+</div>
+<div class="alert alert-warning">
+    <p>
+        <strong>{{_('Hinweis')}}:</strong> {{_('Wenn Sie auf die Schaltfläche "Next: Add Data" klicken, speichern Sie den Datensatz. 
+        Sie können die Daten im nächsten Schritt hinzufügen. Weitere Informationen finden Sie im nächsten Abschnitt. ')}}
+    </p>
+</div>
+
+
+    
+    
+    
+   
+    
+
+
+    
+    
