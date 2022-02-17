@@ -1,91 +1,37 @@
 {% asset 'ckanext-user-manual/help-css' %}
 {% asset 'ckanext-user-manual/help-js' %}
 
+{% set section_count = 7 %}
+{% set section_titles = [
+    'How to Add a new dataset',
+    'How to upload resource(s)',
+    'How to edit a data resource',
+    'Who can access my data',
+    'How to add collaborator to my dataset',
+    'How to add a reference to my dataset',
+    'How to search for a dataset'
+] %}
+
+
 <div clas="row">
     <div class="col-sm-12">
         <h1>{{_('Help')}}</h4>
     </div>
 </div>
-<div class="row" id="item1">
-    <div class="col-sm-12">
-        <div class="menu-item" id="content1-head">
-            <i class="fa fa-plus" aria-hidden="true"></i> 
-            {{_('How to Add a new dataset')}}?
-        </div>
-        <div class="menu-item-body" id="content1-body"> 
-            {% snippet 'snippets/sections/section1.html' %}
-        </div>       
-    </div>
-</div>
 
-<div class="row" id="item2">
-    <div class="col-sm-12">
-        <div class="menu-item" id="content2-head">
-            <i class="fa fa-plus" aria-hidden="true"></i> 
-            {{_('How to upload resource(s)')}}?
-        </div>
-        <div class="menu-item-body" id="content2-body"> 
-            {% snippet 'snippets/sections/section2.html' %}
-        </div>       
-    </div>
-</div>
 
-<div class="row" id="item3">
-    <div class="col-sm-12">
-        <div class="menu-item" id="content3-head">
-            <i class="fa fa-plus" aria-hidden="true"></i>
-            {{_('How to edit a data resource')}}?
+{% for section_number in range(1, section_count + 1) %}
+    <div class="row" id={{'item' ~ section_number}}>
+        <div class="col-sm-12">
+            <div class="menu-item" id={{'content' ~ section_number ~ '-head'}}>
+                <i class="fa fa-plus" aria-hidden="true"></i> 
+                {{_(section_titles[section_number - 1])}}?
+            </div>
+            <div class="menu-item-body" id={{'content' ~ section_number ~ '-body'}}> 
+                {% set snippet_name = 'snippets/sections/section' ~ section_number ~ '.html' %}
+                {% snippet snippet_name %}
+            </div>       
         </div>
-        <div class="menu-item-body" id="content3-body"> 
-            {% snippet 'snippets/sections/section3.html' %}
-        </div>       
     </div>
-</div>
+{% endfor %}
 
-<div class="row" id="item4">
-    <div class="col-sm-12">
-        <div class="menu-item" id="content4-head">
-            <i class="fa fa-plus" aria-hidden="true"></i>
-            {{_('Who can access my data')}}?
-        </div>
-        <div class="menu-item-body" id="content4-body"> 
-            {% snippet 'snippets/sections/section4.html' %}
-        </div>       
-    </div>
-</div>
-
-<div class="row" id="item5">
-    <div class="col-sm-12">
-        <div class="menu-item" id="content5-head">
-            <i class="fa fa-plus" aria-hidden="true"></i>
-            {{_('How to add collaborator to my dataset')}}?
-        </div>
-        <div class="menu-item-body" id="content5-body"> 
-            {% snippet 'snippets/sections/section5.html' %}
-        </div>       
-    </div>
-</div>
-
-<div class="row" id="item6">
-    <div class="col-sm-12">
-        <div class="menu-item" id="content6-head">
-            <i class="fa fa-plus" aria-hidden="true"></i>
-            {{_('How to add a reference to my dataset')}}?
-        </div>
-        <div class="menu-item-body" id="content6-body"> 
-            {% snippet 'snippets/sections/section6.html' %}
-        </div>       
-    </div>
-</div>
-
-<div class="row" id="item7">
-    <div class="col-sm-12">
-        <div class="menu-item" id="content7-head">
-            <i class="fa fa-plus" aria-hidden="true"></i>
-            {{_('How to search for a dataset')}}?
-        </div>
-        <div class="menu-item-body" id="content7-body"> 
-            {% snippet 'snippets/sections/section7.html' %}
-        </div>       
-    </div>
-</div>
