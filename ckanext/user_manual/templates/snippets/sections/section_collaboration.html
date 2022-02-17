@@ -1,24 +1,17 @@
 <p>
-    {% trans %}
-        You can add a reference citation to your dataset. The reference can be a publication or another dataset. 
-    {% endtrans %}
+    {{_('Wenn ein Data Set privat ist, können nur Personen innerhalb Ihrer Organisation darauf zugreifen. 
+    Wenn Sie externen Nutzern Zugang gewähren möchten, können Sie sie als  Kooperationspartner hinzufügen.')}}
 </p>
-
 <p>
-    {% trans %}
-        To add a reference, go to the target dataset and click on the <b>Add Reference</b> button on top of the page (beside the 
-        Mangae button). The reference's citation will appear on the dataset page, above the "Additional Info" table.  
-    {% endtrans %}
+    {{_('Um  Kooperationspartner hinzuzufügen, öffnen Sie die Seite des betreffenden Datasets zur Bearbeitung und fügen Sie  
+    Kooperationspartner auf der Registerkarte Collaborators hinzu. 
+    Ein  Kooperationspartner kann folgende Rollen und Rechte haben:')}}
 </p>
-
-<p>
-    {% trans %}
-        You can add a reference in three ways:
-    {% endtrans %}
-</p>
-
 <ul>
-    <li>Doi URL/ID</li>
-    <li>Bibtex citation data</li>
-    <li>Manually</li>
+    <li>
+        <strong>Member:</strong> {{_('sieht den Datensatz nur')}}  
+    </li>
+    <li>
+        <strong>Editor:</strong> {{_('kann den Datensatz sehen und bearbeiten')}}  
+    </li>
 </ul>
