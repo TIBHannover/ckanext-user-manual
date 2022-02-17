@@ -1,27 +1,33 @@
 <p>
-    After saving the dataset information, you can upload or link data to the dataset:
+    {{_('Dateien gehören immer zu einem Dataset. Daher ist zuerst ein Dataset anzulegen, 
+    in dessen Verlauf eine Datei hochgeladen wird. Man kann auch später noch eine Datei einem Dataset hinzufügen.')}}
+</p>
+<p>
+    {{_('Nach Eingabe der Metadaten zu einem Dataset erfolgt im nächsten Schritt das Hochladen der zugehörigen Dateien. 
+    Alternativ kann auch der Link auf eine Datei angegegeben werden, die bereits andernorts im Netz abgelegt wurde. ')}}
 </p>
 <ul>
     <li>
         <p>
-            You can drag&drop the data files.
+            {{_('Dateien können durch Drag&Drop in die Ablagefläche des Upload-Formulares hochgeladen werden')}}
         </p>
     </li>
     <li>
         <p>
-            Alternatively, You can upload them by clicking the "upload" button.
+            {{_('Dateien können durch Anklicken der Schaltfläche "Upload" und Auswahl aus den Verzeichnissen des Computers hochgeladen werden')}}
         </p>
     </li>
     <li>
         <p>
-            Alternatively, You can add the link to the data source by clicking the "Link" button.
+            {{_('Alternativ kann ein Link auf eine Datei durch Anklicken der Schaltfläche "Link" und Angabe einer URL bereit gestellt werden')}}
         </p>
     </li>
 </ul>
 
 <div class="alert alert-warning">
     <p>
-        <strong>Note:</strong>  If you upload multiple files, the description would be indentical for all of them. You can edit the description 
-        later. Please have a look at "How to edit a data resource" section. 
+        <strong>{{_('Hinweis')}}:</strong>  {{_('Sie können für jede Datei eine Beschreibung eingeben. 
+        Falls Sie mittels Drag&Drop mehrere Dateien auf einmal hochladen, wird für alle Daten dieselbe Beschreibung verwendet. 
+        Sie können diese später bei Bedarf durch Bearbeiten des Datasets individuell anpassen.')}}
     </p>
 </div>
