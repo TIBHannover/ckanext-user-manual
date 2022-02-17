@@ -1,15 +1,26 @@
 {% asset 'ckanext-user-manual/help-css' %}
 {% asset 'ckanext-user-manual/help-js' %}
 
-{% set section_count = 7 %}
 {% set section_titles = [
     'Wie füge ich ein neues Dataset hinzu?',
     'Wie lade ich eine Datei oder Data Resource in ckan hoch?',
+    'Wie kann ich ein Dataset nachträglich bearbeiten?',
     'Wie kann ich eine Data Resource nachträglich bearbeiten',
     'Wer kann auf meine Daten zugreifen?',
     'Wie kann ich Kooperationspartner zu meinem Datensatz hinzufügen?',
     'Wie füge ich einen Literaturverweis zu meinem Data Set hinzu?',
     'Wie suche ich nach einem Data Set'
+] %}
+
+{% set section_snippets = [
+    '_addDataset',
+    '_addDataResource',
+    '_editDataset',
+    '_editDataResource',
+    '_visibility',
+    '_collaboration',
+    '_reference',
+    '_search'
 ] %}
 
 
@@ -20,15 +31,15 @@
 </div>
 
 
-{% for section_number in range(1, section_count + 1) %}
-    <div class="row" id={{'item' ~ section_number}}>
+{% for section in section_snippets %}
+    <div class="row" id={{'item' ~ loop.index}}>
         <div class="col-sm-12">
-            <div class="menu-item" id={{'content' ~ section_number ~ '-head'}}>
+            <div class="menu-item" id={{'content' ~ loop.index ~ '-head'}}>
                 <i class="fa fa-plus" aria-hidden="true"></i> 
-                {{_(section_titles[section_number - 1])}}
+                {{_(section_titles[loop.index - 1])}}
             </div>
-            <div class="menu-item-body" id={{'content' ~ section_number ~ '-body'}}> 
-                {% set snippet_name = 'snippets/sections/section' ~ section_number ~ '.html' %}
+            <div class="menu-item-body" id={{'content' ~ loop.index ~ '-body'}}> 
+                {% set snippet_name = 'snippets/sections/section' ~ section ~ '.html' %}
                 {% snippet snippet_name %}
             </div>       
         </div>
