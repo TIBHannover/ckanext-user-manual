@@ -30,6 +30,12 @@
     </div>
 </div>
 
+<label for="help_video">{{_('CKAN Übersicht')}}</label>
+<video id="help_video" controls>
+    <source src="{{h.url_for('user_manual.video', _external=True)}}" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
 
 {% for section in section_snippets %}
     <div class="row" id={{'item' ~ loop.index}}>
