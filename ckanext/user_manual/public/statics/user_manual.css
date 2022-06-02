@@ -21,3 +21,15 @@
     cursor: pointer;
     font-size: 20px;
 }
+
+#help_video{
+    margin:auto;
+    max-width:50%;
+    display:block;
+    margin-bottom: 20px;
+}
+
+label[for=help_video]{
+    font-size: 20px;
+    margin-left: 25%;
+}
