@@ -30,7 +30,11 @@
     </div>
 </div>
 
-<label for="help_video">{{_('CKAN Übersicht')}}</label>
+{% if h.which_sfb() != "1153" %}
+    <label for="help_video">{{_('CKAN Übersicht')}}</label>
+{% else %}
+    <label for="help_video">{{_('CKAN Handlungsempfehlungen')}}</label>
+{% endif %}
 <video id="help_video" controls>
     <source src="{{h.url_for('user_manual.video', _external=True)}}" type="video/mp4">
     Your browser does not support the video tag.
