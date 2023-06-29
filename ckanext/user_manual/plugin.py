@@ -17,6 +17,16 @@ def get_help_video():
     UPLOAD_DIR = toolkit.config['ckan.storage_path'] + '/storage/uploads/admin/'
     return send_from_directory(UPLOAD_DIR, "help.mp4")
 
+def which_sfb():
+    ckan_root_path = toolkit.config.get('ckan.root_path')
+    if  ckan_root_path and 'sfb1368/ckan' in ckan_root_path:
+        return '1368'
+    elif ckan_root_path and 'sfb1153/ckan' in ckan_root_path:
+        return '1153'
+    else:
+        # localhost
+        return '1368'
+
 
 class UserManualPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurer)
@@ -55,4 +65,5 @@ class UserManualPlugin(plugins.SingletonPlugin):
     #ITemplateHelpers
 
     def get_helpers(self):
-        return {'is_plugin_enabled': check_plugin_enabled}
+        return {'is_plugin_enabled': check_plugin_enabled, 
+                'which_sfb': which_sfb}
