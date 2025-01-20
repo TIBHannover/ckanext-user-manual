@@ -1,3 +1,6 @@
+[![CI](https://github.com/TIBHannover/ckanext-user-manual/actions/workflows/test.yml/badge.svg)](https://github.com/TIBHannover/ckanext-user-manual/actions/workflows/test.yml)
+
+
 # ckanext-user-manual
 
  The plugin adds a "Help" option on the site main navigation menu. The Help page contains information about CKAN functionalities that aims to answer users questions and guiding them to use CKAN.  
