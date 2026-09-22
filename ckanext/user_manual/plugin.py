@@ -1,5 +1,8 @@
+import os
+
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
+from ckan.exceptions import CkanConfigurationException
 from flask import Blueprint, render_template, send_from_directory
 
 
@@ -7,15 +10,18 @@ def help():
     return render_template('help.html')
 
 def check_plugin_enabled(plugin_name):
-    plugins = toolkit.config.get("ckan.plugins")
-    if plugin_name in plugins:
-        return True
-    return False
+    enabled_plugins = toolkit.config.get("ckan.plugins", "").split()
+    return plugin_name in enabled_plugins
 
 
 def get_help_video():
-    UPLOAD_DIR = toolkit.config['ckan.storage_path'] + '/storage/uploads/admin/'
-    return send_from_directory(UPLOAD_DIR, "help.mp4")
+    storage_path = toolkit.config.get('ckan.storage_path')
+    if not storage_path:
+        raise CkanConfigurationException(
+            'ckan.storage_path must be configured to serve the help video'
+        )
+    upload_dir = os.path.join(storage_path, 'storage', 'uploads', 'admin')
+    return send_from_directory(upload_dir, "help.mp4")
 
 def which_sfb():
     ckan_root_path = toolkit.config.get('ckan.root_path')

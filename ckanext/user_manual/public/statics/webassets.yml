@@ -11,7 +11,5 @@ help-js:
       - vendor/vendor
       - vendor/bootstrap
       - vendor/jquery
-      - vendor/jquery.ui.core
   contents:
     - user_manual.js
-    
