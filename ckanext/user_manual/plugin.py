@@ -16,6 +16,10 @@ def check_plugin_enabled(plugin_name):
     return plugin_name in enabled_plugins
 
 
+def sparql_interface_enabled():
+    return plugins.plugin_loaded('sparql_interface')
+
+
 def get_help_video():
     storage_path = toolkit.config.get('ckan.storage_path')
     if not storage_path:
@@ -73,5 +77,6 @@ class UserManualPlugin(plugins.SingletonPlugin):
     #ITemplateHelpers
 
     def get_helpers(self):
-        return {'is_plugin_enabled': check_plugin_enabled, 
+        return {'is_plugin_enabled': check_plugin_enabled,
+                'sparql_interface_enabled': sparql_interface_enabled,
                 'which_sfb': which_sfb}

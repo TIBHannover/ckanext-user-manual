@@ -80,6 +80,13 @@ def test_plugin_detection_matches_complete_names(monkeypatch):
     assert plugin.check_plugin_enabled("datastore") is True
 
 
+@pytest.mark.parametrize("expected", [True, False])
+def test_sparql_interface_detection(monkeypatch, expected):
+    monkeypatch.setattr(plugin.plugins, "plugin_loaded", lambda name: expected)
+
+    assert plugin.sparql_interface_enabled() is expected
+
+
 def test_help_video_requires_storage_configuration(app, monkeypatch):
     monkeypatch.delitem(toolkit.config, "ckan.storage_path", raising=False)
 
